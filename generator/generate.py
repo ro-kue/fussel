@@ -73,6 +73,8 @@ class SiteGenerator:
                     im.thumbnail(new_size)
                     im.save(new_sub_photo)
             data['srcSet'] += ["%s/%s %sw" % (external_path, os.path.basename(new_sub_photo), new_size[0])]
+        data['srcSet'] += ["%s/%s %sw" % (external_path, os.path.basename(new_original_photo), x)]
+        largest_src = new_original_photo
 
         print(' ')
 
