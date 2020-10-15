@@ -12,7 +12,7 @@ export default class Navbar extends React.Component {
         </span>
         <span>
           &nbsp;
-          Albums
+          Alben
         </span>
       </a>
     )
@@ -27,7 +27,7 @@ export default class Navbar extends React.Component {
           </span>
           <span>
           	&nbsp;
-            People
+            Personen
           </span>
         </a>
       )

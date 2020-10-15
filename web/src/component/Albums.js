@@ -23,7 +23,7 @@ export default class Albums extends React.Component {
           <div className="card-content">
             <div className="media-content">
               <p className="title is-5">{album.name}</p>
-              <p className="subtitle is-7">{album["photos"].length} Photo{album["photos"].length === 1 ? '' : 's'}</p>
+              <p className="subtitle is-7">{album["photos"].length} Foto{album["photos"].length === 1 ? '' : 's'}</p>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@ export default class Albums extends React.Component {
               <ul>
                 <li className="is-active">
                   <i className="fas fa-book fa-lg"></i>
-                  <a className="title is-4">&nbsp;&nbsp;Albums</a>
+                  <a className="title is-4">&nbsp;&nbsp;Alben</a>
                 </li>
               </ul>
             </nav>

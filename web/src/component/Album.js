@@ -74,7 +74,7 @@ export default class Album extends Component {
               <ul>
                 <li onClick={(e) => this.props.changeCollectionType("albums")}>
                   <i className="fas fa-book fa-lg"></i>
-                  <a className="title is-4">&nbsp;&nbsp;Albums</a>
+                  <a className="title is-4">&nbsp;&nbsp;Alben</a>
                 </li>
                 <li className="is-active">
                   <a className="title is-4">{this.props.album["name"]}</a>

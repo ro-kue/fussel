@@ -74,7 +74,7 @@ export default class Person extends Component {
               <ul>
                 <li onClick={(e) => this.props.changeCollectionType("people")}>
                   <i className="fas fa-user-friends fa-lg"></i>
-                  <a className="title is-4">&nbsp;&nbsp;People</a>
+                  <a className="title is-4">&nbsp;&nbsp;Personen</a>
                 </li>
                 <li className="is-active">
                   <a className="title is-4">{this.props.person["name"]}</a>

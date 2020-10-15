@@ -23,7 +23,7 @@ export default class People extends React.Component {
           <div className="card-content">
             <div className="media-content">
               <p className="title is-5">{person.name}</p>
-              <p className="subtitle is-7">{person["photos"].length} Photo{person["photos"].length === 1 ? '' : 's'}</p>
+              <p className="subtitle is-7">{person["photos"].length} Fotos{person["photos"].length === 1 ? '' : 's'}</p>
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@ export default class People extends React.Component {
               <ul>
                 <li className="is-active">
                   <i className="fas fa-user-friends fa-lg"></i>
-                  <a className="title is-4">&nbsp;&nbsp;People</a>
+                  <a className="title is-4">&nbsp;&nbsp;Personen</a>
                 </li>
               </ul>
             </nav>
