@@ -3,7 +3,7 @@
 import os
 import shutil
 import json
-from PIL import Image, UnidentifiedImageError
+from PIL import Image, UnidentifiedImageError, ExifTags
 from bs4 import BeautifulSoup
 
 SUPPORTED_EXTENSIONS = ('.jpg', '.jpeg', '.gif', '.png')
@@ -70,6 +70,18 @@ class SiteGenerator:
             print(f'{new_size[0]}x{new_size[1]} ', end="")
             if self.overwrite or not os.path.exists(new_sub_photo):
                 with Image.open(new_original_photo) as im:
+                    if hasattr(im, '_getexif'):
+                        for orientation in ExifTags.TAGS.keys():
+                            if ExifTags.TAGS[orientation] == 'Orientation':
+                                break
+                        e = im._getexif()
+                        if e is not None:
+                            exif = dict(e.items())
+                            orientation = exif[orientation]
+
+                            if orientation == 3: im = im.transpose(Image.ROTATE_180)
+                            elif orientation == 6: im = im.transpose(Image.ROTATE_270)
+                            elif orientation == 8: im = im.transpose(Image.ROTATE_90)
                     im.thumbnail(new_size)
                     im.save(new_sub_photo)
             data['srcSet'] += ["%s/%s %sw" % (external_path, os.path.basename(new_sub_photo), new_size[0])]
