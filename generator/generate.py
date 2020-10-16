@@ -77,7 +77,7 @@ class SiteGenerator:
                         e = im._getexif()
                         if e is not None:
                             exif = dict(e.items())
-                            orientation = exif[orientation]
+                            orientation = exif.get(orientation, 0)
 
                             if orientation == 3: im = im.transpose(Image.ROTATE_180)
                             elif orientation == 6: im = im.transpose(Image.ROTATE_270)
